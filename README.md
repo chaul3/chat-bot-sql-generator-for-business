@@ -121,6 +121,18 @@ The project includes comprehensive sample data:
 - **Customer Data**: Customer demographics and spending
 - **Employee Data**: HR data with performance metrics
 
+### 🎯 **Want More Data?** 
+For additional datasets perfect for your chatbot, see **[DATASETS.md](DATASETS.md)** for curated toy datasets including:
+- 🏪 **Superstore** (10K+ sales records)
+- 💼 **HR Analytics** (employee data)
+- 🏠 **Real Estate** (housing market data)
+- 🚗 **Automotive** (car sales data)
+- 📈 **Financial** (stock market data)
+
+All datasets include sample questions and usage guidelines!
+- **Customer Data**: Customer demographics and spending
+- **Employee Data**: HR data with performance metrics
+
 ## 🏗️ Architecture
 
 ```
