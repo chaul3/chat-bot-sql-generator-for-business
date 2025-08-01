@@ -1,0 +1,11 @@
+Date,Product,Category,Sales,Quantity,Region
+2024-01-01,Laptop,Electronics,1200,2,North
+2024-01-02,Mouse,Electronics,25,5,South
+2024-01-03,Keyboard,Electronics,75,3,East
+2024-01-04,Monitor,Electronics,300,1,West
+2024-01-05,Desk,Furniture,450,1,North
+2024-01-06,Chair,Furniture,200,2,South
+2024-01-07,Phone,Electronics,800,1,East
+2024-01-08,Tablet,Electronics,600,1,West
+2024-01-09,Headphones,Electronics,150,3,North
+2024-01-10,Webcam,Electronics,100,2,South

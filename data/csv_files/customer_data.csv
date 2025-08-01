@@ -1,0 +1,11 @@
+CustomerID,Name,Age,City,Spending,Segment
+1,Alice Johnson,28,New York,5000,Premium
+2,Bob Smith,35,Los Angeles,3200,Standard
+3,Carol Brown,42,Chicago,7500,Premium
+4,David Wilson,29,Houston,2100,Basic
+5,Eva Davis,38,Phoenix,4800,Standard
+6,Frank Miller,45,Philadelphia,6200,Premium
+7,Grace Lee,31,San Antonio,3900,Standard
+8,Henry Taylor,39,San Diego,1800,Basic
+9,Iris Clark,27,Dallas,5500,Premium
+10,Jack Anderson,33,San Jose,4100,Standard
