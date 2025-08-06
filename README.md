@@ -5,20 +5,20 @@
 **completely local** chatbot that can answer questions by querying databases and analyzing CSV data, with fine-tuning options for improved performance. **No API keys required!**
 
 ![Chatbot Interface](screenshots/chatbot-interface.png)
-*🎯 Interactive local chatbot for database queries and CSV analysis - completely private and offline-capable*
+* Interactive local chatbot for database queries and CSV analysis - completely private and offline-capable*
 
 ## ✨ Features
 
-- ** Completely Local**: No data leaves your machine - works offline
-- ** Open Source Models**: Uses HuggingFace transformers instead of paid APIs
-- ** Database Schema Reading**: Automatically reads database schemas and answers SQL-related questions
-- ** CSV Business Intelligence**: Processes CSV files to answer business questions
-- ** Fine-tuning Pipeline**: Improves chatbot performance using question-answer pairs
-- ** Mock Data Integration**: Uses open data sources for demonstration
-- ** Multi-modal Q&A**: Handles both technical (SQL) and business questions
-- ** Enhanced Web Interface**: Beautiful Streamlit-based web interface with dashboards
-- **⌨ CLI Interface**: Command-line interface for quick testing
-- ** Jupyter Integration**: Interactive notebooks for data exploration
+- **Completely Local**: No data leaves your machine - works offline
+- **Open Source Models**: Uses HuggingFace transformers instead of paid APIs
+- **Database Schema Reading**: Automatically reads database schemas and answers SQL-related questions
+- **CSV Business Intelligence**: Processes CSV files to answer business questions
+- **Fine-tuning Pipeline**: Improves chatbot performance using question-answer pairs
+- **Mock Data Integration**: Uses open data sources for demonstration
+- **Multi-modal Q&A**: Handles both technical (SQL) and business questions
+- **Enhanced Web Interface**: Beautiful Streamlit-based web interface with dashboards
+- **CLI Interface**: Command-line interface for quick testing
+- **Jupyter Integration**: Interactive notebooks for data exploration
 
 ## Quick Start
 
@@ -79,7 +79,7 @@ The enhanced local demo (`local_demo.py`) offers:
 - **Data Visualization**: Interactive charts and graphs
 - **Graceful Fallbacks**: Works even without AI models installed
 
-### 📊 **Data Analysis**
+### **Data Analysis**
 - **Database Exploration**: Automatic schema reading and visualization
 - **CSV Analytics**: Statistical analysis and business insights
 - **Correlation Analysis**: Find patterns in your data
