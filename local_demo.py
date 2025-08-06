@@ -36,13 +36,10 @@ def initialize_session_state():
     
     if 'db_manager' not in st.session_state:
         st.session_state.db_manager = DatabaseManager()
-    
     if 'csv_analyzer' not in st.session_state:
         st.session_state.csv_analyzer = CSVAnalyzer()
-    
     if 'messages' not in st.session_state:
         st.session_state.messages = []
-    
     if 'sample_data_loaded' not in st.session_state:
         st.session_state.sample_data_loaded = False
 
