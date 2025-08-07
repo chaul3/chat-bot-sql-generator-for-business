@@ -10,8 +10,8 @@ project_root = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(project_root)
 
 def main():
-    print("🤖 Intelligent Database & CSV Chatbot Demo")
-    print("=" * 50)
+    print("🤖 Intelligent Database & CSV Chatbot Demo with RAG")
+    print("=" * 55)
     
     # Test Question Classification
     print("\n1. 🧠 Question Classification Demo")
@@ -26,6 +26,7 @@ def main():
             "Show me the SQL schema",
             "What's the average sales in the CSV?",
             "Calculate correlation between variables",
+            "Analyze patterns in my data",
             "Hello, what can you do?"
         ]
         
@@ -36,8 +37,57 @@ def main():
     except Exception as e:
         print(f"Error: {e}")
     
+    # Test RAG Enhancement
+    print("\n2. 🧠 RAG Enhancement Demo")
+    print("-" * 30)
+    
+    try:
+        from src.chatbot.rag_enhancer import SimpleRAGEnhancer
+        import pandas as pd
+        from data.create_sample_data import create_sample_sales_data
+        
+        # Initialize RAG enhancer
+        rag_enhancer = SimpleRAGEnhancer()
+        print(f"✅ RAG initialized in: {rag_enhancer.get_rag_status()['rag_mode']} mode")
+        
+        # Create and index sample data
+        sales_df = create_sample_sales_data()
+        rag_enhancer.index_csv_data(sales_df)
+        
+        print(f"✅ Indexed {len(sales_df)} rows of sales data")
+        
+        # Test RAG retrieval
+        test_queries = [
+            "sales amount trends",
+            "product performance",
+            "customer patterns"
+        ]
+        
+        print("\n📊 RAG Retrieval Test:")
+        for query in test_queries:
+            relevant_docs = rag_enhancer.retrieve_relevant_data(query, "csv", top_k=2)
+            print(f"Query: '{query}' → Found {len(relevant_docs)} relevant chunks")
+        
+        # Test should_use_rag logic
+        print("\n🤔 RAG Decision Logic:")
+        test_questions_rag = [
+            "SELECT * FROM customers",  # Traditional
+            "Analyze patterns in sales data",  # RAG
+            "What are the correlations?",  # RAG
+            "Count all orders"  # Traditional
+        ]
+        
+        for question in test_questions_rag:
+            should_rag = rag_enhancer.should_use_rag(question)
+            approach = "RAG" if should_rag else "Traditional"
+            print(f"'{question}' → {approach}")
+        
+    except Exception as e:
+        print(f"RAG Demo Error: {e}")
+        print("Install RAG dependencies: pip install sentence-transformers chromadb")
+    
     # Test Database Management
-    print("\n2. 🗄️ Database Management Demo")
+    print("\n3. 🗄️ Database Management Demo")
     print("-" * 30)
     
     try:
@@ -61,7 +111,7 @@ def main():
         print(f"Error: {e}")
     
     # Test CSV Analysis
-    print("\n3. 📈 CSV Analysis Demo")
+    print("\n4. 📈 CSV Analysis Demo")
     print("-" * 30)
     
     try:
@@ -99,7 +149,7 @@ def main():
         print(f"Error: {e}")
     
     # Show training data
-    print("\n4. 🤖 Training Data Demo")
+    print("\n5. 🤖 Training Data Demo")
     print("-" * 30)
     
     try:
@@ -117,11 +167,13 @@ def main():
         print(f"Error: {e}")
     
     print("\n🎉 Demo Complete!")
-    print("\n📝 To use the full chatbot:")
+    print("\n📝 To use the full chatbot with RAG:")
     print("1. Install all dependencies: pip install -r requirements.txt")
-    print("2. Add OpenAI API key to .env file")
-    print("3. Run web interface: streamlit run main.py")
-    print("4. Or use CLI: python scripts/cli_chatbot.py")
+    print("2. For advanced RAG: pip install sentence-transformers chromadb")
+    print("3. Add OpenAI API key to .env file (optional)")
+    print("4. Run enhanced web interface: streamlit run local_demo.py")
+    print("5. Or original interface: streamlit run main.py")
+    print("6. Or use CLI: python scripts/cli_chatbot.py")
 
 if __name__ == "__main__":
     main()

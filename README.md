@@ -1,16 +1,19 @@
-# 🤖 Intelligent Database & CSV Chatbot 
+# 🤖 Intelligent Database & CSV Chatbot with RAG
 
-
-## 🚀 Quick Starts
-**completely local** chatbot that can answer questions by querying databases and analyzing CSV data, with fine-tuning options for improved performance. **No API keys required!**
+## 🚀 Quick Start
+**Completely local** chatbot with **Retrieval-Augmented Generation (RAG)** that can answer questions by querying databases and analyzing CSV data, with fine-tuning options for improved performance. **No API keys required!**
 
 ![Chatbot Interface](screenshots/chatbot-interface.png)
 * Interactive local chatbot for database queries and CSV analysis - completely private and offline-capable*
 
 ## ✨ Features
 
+- **🧠 RAG Enhancement**: Retrieval-Augmented Generation for context-aware responses
 - **Completely Local**: No data leaves your machine - works offline
 - **Open Source Models**: Uses HuggingFace transformers instead of paid APIs
+- **Smart Question Routing**: Automatically chooses RAG vs traditional approach
+- **Vector Search**: Advanced semantic search with ChromaDB (optional)
+- **Graceful Fallbacks**: Works with or without advanced dependencies
 - **Database Schema Reading**: Automatically reads database schemas and answers SQL-related questions
 - **CSV Business Intelligence**: Processes CSV files to answer business questions
 - **Fine-tuning Pipeline**: Improves chatbot performance using question-answer pairs
@@ -30,7 +33,11 @@ cd chat-bot-sql-generator-for-business
 
 ### 2. Install Dependencies
 ```bash
+# Basic dependencies
 pip install -r requirements.txt
+
+# For advanced RAG features (recommended)
+pip install sentence-transformers chromadb faiss-cpu
 ```
 
 ### 3. Initialize Project
@@ -40,7 +47,7 @@ python initialize_project.py
 
 ### 4. Run the Chatbot
 ```bash
-# Enhanced local web interface (RECOMMENDED)
+# Enhanced local web interface with RAG (RECOMMENDED)
 .venv/bin/python -m streamlit run local_demo.py
 
 # Original web interface
@@ -49,16 +56,28 @@ python initialize_project.py
 # Or command line interface
 .venv/bin/python scripts/cli_chatbot.py
 
-# Or run the demo
+# Or run the demo with RAG
 .venv/bin/python demo.py
 
 # Test the local chatbot engine
 .venv/bin/python test_local_chatbot.py
+
+# Interactive Jupyter notebook with RAG demo
+jupyter notebook notebooks/demo.ipynb
 ```
 
-##  Local Demo Features
+##  Local Demo Features with RAG
 
 The enhanced local demo (`local_demo.py`) offers:
+
+###  **🧠 RAG Enhancement**
+- **Context-Aware Responses**: Uses relevant data chunks to improve answers
+- **Smart Question Routing**: Automatically detects when to use RAG vs traditional
+- **Advanced Mode**: Uses sentence-transformers + ChromaDB for semantic search
+- **Simple Mode**: Keyword-based fallback when advanced dependencies unavailable
+- **Real-time Indexing**: Automatically indexes uploaded CSV data
+- **🧪 RAG Testing Controls**: Switch between RAG/Traditional modes for comparison
+- **⚡ Quick Test Buttons**: Pre-built questions to demonstrate RAG differences
 
 ###  **Completely Private**
 - All processing happens on your machine
@@ -101,11 +120,18 @@ The chatbot can handle questions like:
 - "Which product has the highest sales?"
 - "What's the distribution by region?"
 
-### Business Intelligence
-- "Show me correlations in the data"
-- "Generate insights from customer behavior"
-- "What are the top-performing products?"
-- "Find patterns in sales data"
+### RAG-Enhanced Analytical Questions
+- "Analyze patterns in the sales data"
+- "Explain the relationship between customer demographics and purchases"
+- "What trends do you see in the revenue data?"
+- "Compare performance across different product categories"
+- "Tell me about correlations in this dataset"
+
+### Business Intelligence with Context
+- "Show me insights from customer behavior patterns"
+- "Identify the most profitable customer segments"
+- "What factors influence sales performance?"
+- "Explain seasonal trends in our data"
 
 ## 📊 Sample Data
 
@@ -170,6 +196,29 @@ LOG_LEVEL=INFO
 - **Fallback**: Rule-based pattern matching (works without any models)
 - **Optional**: OpenAI models (requires API key)
 - **Completely Local**: No internet connection required after setup
+
+## 🧪 Testing RAG vs Traditional
+
+The web interface includes powerful testing controls:
+
+### RAG Mode Controls:
+- **🤖 Auto Mode**: Smart detection of when to use RAG vs traditional
+- **🧠 Force RAG**: All questions use RAG enhancement for testing
+- **📊 Force Traditional**: Disable RAG to compare traditional responses
+
+### Quick Testing:
+- **⚡ Test Buttons**: Pre-built questions to demonstrate differences
+- **🔄 Reset Chat**: Clear conversation history for fresh testing
+- **📊 Live Indicators**: Each response shows which approach was used
+
+### Example Test Workflow:
+1. Load sample data
+2. Ask "What's the total sales?" in Traditional mode
+3. Switch to RAG mode and ask "Analyze sales patterns"
+4. Compare the depth and context of responses
+5. Use Auto mode to see intelligent routing
+
+For detailed testing guide, see **[RAG_TESTING_GUIDE.md](RAG_TESTING_GUIDE.md)**
 
 ##  Testing
 
