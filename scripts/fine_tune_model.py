@@ -1,10 +1,6 @@
-"""
-Script to fine-tune the chatbot model using prepared training data
-"""
 import sys
 import os
 import json
-
 # Add the project root to the path
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_root)
@@ -23,7 +19,7 @@ def fine_tune_chatbot():
     # Load training data
     training_file = os.path.join(Config.TRAINING_DATA_PATH, "comprehensive_training_data.json")
     if not os.path.exists(training_file):
-        print(f"❌ Training data file not found: {training_file}")
+        print(f"Training data file not found: {training_file}")
         print("Please run initialize_project.py first")
         return
     
@@ -45,14 +41,14 @@ def fine_tune_chatbot():
                 "answer": f"Here's the SQL query: {sql_qa['sql_query']}"
             })
         
-        print(f"📊 Added {len(sql_questions)} SQL questions from database")
+        print(f"Added {len(sql_questions)} SQL questions from database")
     except Exception as e:
-        print(f"⚠️ Warning: Could not load SQL questions from database: {e}")
+        print(f"Warning: Could not load SQL questions from database: {e}")
     
     # Load base model
     print("📥 Loading base model...")
     if not model_manager.load_base_model(Config.BASE_MODEL_NAME):
-        print("❌ Failed to load base model")
+        print("Failed to load base model")
         return
     
     # Start fine-tuning
@@ -65,8 +61,8 @@ def fine_tune_chatbot():
     )
     
     if success:
-        print("✅ Fine-tuning completed successfully!")
-        print(f"📁 Model saved to: {Config.FINE_TUNED_MODEL_PATH}")
+        print("Fine-tuning completed successfully!")
+        print(f"Model saved to: {Config.FINE_TUNED_MODEL_PATH}")
         
         # Test the fine-tuned model
         print("🧪 Testing fine-tuned model...")
@@ -81,7 +77,7 @@ def fine_tune_chatbot():
             print(f"Q: {question}")
             print(f"A: {response}\n")
     else:
-        print("❌ Fine-tuning failed!")
+        print("Fine-tuning failed!")
 
 if __name__ == "__main__":
     fine_tune_chatbot()
