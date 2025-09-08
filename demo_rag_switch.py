@@ -14,6 +14,7 @@ def demo_rag_switch():
     print("🧪 RAG Switch Demonstration")
     print("=" * 40)
     
+    
     try:
         from src.chatbot.rag_enhancer import SimpleRAGEnhancer
         from data.create_sample_data import create_sample_sales_data

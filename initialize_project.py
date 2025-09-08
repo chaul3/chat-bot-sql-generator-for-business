@@ -18,7 +18,7 @@ import json
 
 def initialize_project():
     """Initialize the entire chatbot project"""
-    print("🚀 Initializing Intelligent Chatbot Project...")
+    print("Initializing Intelligent Chatbot Project...")
     
     # 1. Create necessary directories
     print("📁 Creating directories...")
@@ -29,9 +29,9 @@ def initialize_project():
     try:
         db_manager = DatabaseManager()
         db_manager.initialize_sample_db()
-        print("✅ Database initialized successfully!")
+        print("Database initialized successfully!")
     except Exception as e:
-        print(f"❌ Error initializing database: {e}")
+        print(f" Error initializing database: {e}")
     
     # 3. Generate sample CSV files
     print("📊 Creating sample CSV files...")
@@ -41,7 +41,7 @@ def initialize_project():
         for name, path in csv_files.items():
             print(f"   - {name}: {path}")
     except Exception as e:
-        print(f"❌ Error creating CSV files: {e}")
+        print(f"Error creating CSV files: {e}")
     
     # 4. Create training data
     print("🤖 Preparing training data...")
@@ -56,17 +56,17 @@ def initialize_project():
         print(f"✅ Training data created with {len(training_data)} examples!")
         print(f"   Saved to: {training_file}")
     except Exception as e:
-        print(f"❌ Error creating training data: {e}")
+        print(f"Error creating training data: {e}")
     
     # 5. Display next steps
-    print("\n🎉 Project initialization complete!")
-    print("\n📝 Next steps:")
+    print("\nProject initialization complete!")
+    print("\nNext steps:")
     print("1. Copy .env.example to .env and add your API keys")
     print("2. Install dependencies: pip install -r requirements.txt")
     print("3. Run the chatbot: streamlit run main.py")
     print("4. (Optional) Fine-tune the model: python scripts/fine_tune_model.py")
     
-    print("\n💡 Sample questions you can ask:")
+    print("\nSample questions you can ask:")
     print("- 'What tables are in the database?'")
     print("- 'Show me the total sales amount'")
     print("- 'Generate a SQL query to find top customers'")
