@@ -4,11 +4,9 @@ Simple demo script showing the chatbot capabilities
 """
 import sys
 import os
-
 # Add project root to path
 project_root = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(project_root)
-
 def main():
     print("🤖 Intelligent Database & CSV Chatbot Demo with RAG")
     print("=" * 55)
