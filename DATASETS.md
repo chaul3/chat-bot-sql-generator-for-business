@@ -4,7 +4,7 @@ This guide provides curated datasets perfect for demonstrating your local databa
 
 ## 📊 **Business & Sales Datasets**
 
-### 1. **Superstore Dataset** ⭐ **HIGHLY RECOMMENDED**
+### 1. **Superstore Dataset**  **HIGHLY RECOMMENDED**
 - **Source**: Tableau Public / Kaggle
 - **Download**: `https://www.kaggle.com/datasets/vivek468/superstore-dataset-final`
 - **Size**: ~10K rows, ~21 columns
