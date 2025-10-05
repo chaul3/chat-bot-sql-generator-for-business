@@ -1,6 +1,5 @@
 # Configuration file for the chatbot
 import os
-
 class Config:
     # Database settings
     DATABASE_PATH = "data/mock_database/sample.db"
