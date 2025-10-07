@@ -5,7 +5,6 @@ Safe startup script for local_demo.py with error handling
 import sys
 import os
 import subprocess
-
 def start_streamlit():
     print("🚀 Starting RAG-enhanced chatbot...")
     print("🔧 Fix applied: NoneType data handling")
