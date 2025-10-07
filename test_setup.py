@@ -4,7 +4,6 @@ Quick test script to verify the chatbot components are working
 """
 import sys
 import os
-
 # Add project root to path
 project_root = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(project_root)
