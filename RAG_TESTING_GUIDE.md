@@ -6,7 +6,7 @@ The enhanced web interface now includes powerful RAG testing controls that allow
 
 ### 1. **Global RAG Toggle** 🔄
 - **Purpose**: Enable/disable RAG enhancement completely
-- **Location**: Sidebar → RAG Controls
+- **Location**: Sidebar → RAG Controls 
 - **Default**: Enabled (when dependencies available)
 
 ### 2. **RAG Mode Selector** 🎛️
