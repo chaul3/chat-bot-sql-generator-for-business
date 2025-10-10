@@ -69,7 +69,7 @@ Chat Bot/
 
 ## Key Components
 
-### 1. Database Integration (`src/database/`)
+### 1. Database Integration (`src/database/`) 
 - **db_manager.py**: Handles SQLite database connections, schema reading, and query execution
 - Automatically creates sample database with customers, products, orders, and training data
 - Supports schema introspection and sample data generation
